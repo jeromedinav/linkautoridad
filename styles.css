@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #0a66c2;
+    color: white;
+    padding: 1rem 2rem;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  #hero {
+    background-color: #f3f3f3;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  #servicios, #recursos, #membresias {
+    padding: 2rem;
+  }
+  
+  .servicio {
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #0a66c2;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  footer {
+    background-color: #0a66c2;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  
