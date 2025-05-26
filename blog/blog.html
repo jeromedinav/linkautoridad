@@ -33,15 +33,20 @@
   <script>
     const spaceID = "h0rqbqbptsi3";
     const accessToken = "kCR13HMr7UNVQAExGU4yFHTsE-aX7saPp9FcG3m_OvY";
-    const url = `https://cdn.contentful.com/spaces/${spaceID}/entries?access_token=${accessToken}&content_type=page`;
+    const url = `https://cdn.contentful.com/spaces/${spaceID}/entries?access_token=${accessToken}`;
 
     fetch(url)
       .then(res => res.json())
       .then(data => {
         const contenedor = document.getElementById("contenedor-articulos");
+        if (!data.items.length) {
+          contenedor.innerHTML = "<p>No hay artículos publicados aún.</p>";
+          return;
+        }
         data.items.forEach(item => {
-          const titulo = item.fields.internalName || "Sin título";
-          const cuerpo = item.fields.seoFields?.title || "Sin contenido";
+          const fields = item.fields;
+          const titulo = fields.title || fields.internalName || "Sin título";
+          const cuerpo = fields.body || fields.seoFields?.title || "Sin contenido";
           const div = document.createElement("div");
           div.className = "articulo";
           div.innerHTML = `<h2>${titulo}</h2><p>${cuerpo}</p>`;
