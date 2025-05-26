@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | LinkAutoridad</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    .articulo { margin-bottom: 2rem; padding: 1rem; border-bottom: 1px solid #ccc; }
+    .articulo h2 { color: #0a66c2; }
+    .articulo p { color: #333; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">LinkAutoridad</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../index.html#servicios">Servicios</a></li>
+        <li><a href="../index.html#recursos">Recursos</a></li>
+        <li><a href="../index.html#membresias">Membresías</a></li>
+        <li><a href="blog.html" class="activo">Blog</a></li>
+        <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="blog">
+    <h1>Blog de LinkAutoridad</h1>
+    <p>Artículos publicados desde Contentful:</p>
+    <div id="contenedor-articulos"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 LinkAutoridad. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const spaceID = "h0rqbqbptsi3";
+    const accessToken = "kCR13HMr7UNVQAExGU4yFHTsE-aX7saPp9FcG3m_OvY";
+    const url = `https://cdn.contentful.com/spaces/${spaceID}/entries?access_token=${accessToken}&content_type=page`;
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const contenedor = document.getElementById("contenedor-articulos");
+        data.items.forEach(item => {
+          const titulo = item.fields.internalName || "Sin título";
+          const cuerpo = item.fields.seoFields?.title || "Sin contenido";
+          const div = document.createElement("div");
+          div.className = "articulo";
+          div.innerHTML = `<h2>${titulo}</h2><p>${cuerpo}</p>`;
+          contenedor.appendChild(div);
+        });
+      })
+      .catch(err => {
+        document.getElementById("contenedor-articulos").innerHTML =
+          "<p>Error al cargar los artículos.</p>";
+        console.error("Error cargando desde Contentful:", err);
+      });
+  </script>
+</body>
+</html>
