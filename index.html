@@ -3,93 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LINKAUTORIDAD – Impulsa tu negocio en LinkedIn</title>
+  <title>LINKAUTORIDAD – Impulsa tu autoridad en LinkedIn</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Base stylesheet (mueve este bloque a css/styles.css si prefieres) -->
-  <style>
-    :root{
-      --color-primary:#0066ff;
-      --color-primary-dark:#0049b3;
-      --color-bg:#f7f9fc;
-      --color-text:#111;
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{
-      font-family:'Poppins',sans-serif;
-      color:var(--color-text);
-      background:var(--color-bg);
-      line-height:1.6;
-    }
-    a{text-decoration:none;color:inherit;}
-
-    /* Layout helpers */
-    .container{max-width:1100px;margin:auto;padding:4rem 1rem;}
-    .btn{
-      display:inline-block;
-      background:var(--color-primary);
-      color:#fff;
-      padding:1rem 2rem;
-      border-radius:8px;
-      font-weight:600;
-      transition:background .25s;
-    }
-    .btn:hover{background:var(--color-primary-dark);}
-
-    /* Header */
-    header{
-      background:#fff;
-      box-shadow:0 2px 8px rgba(0,0,0,.05);
-      position:sticky;top:0;z-index:10;
-    }
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1rem 2rem;}
-    .nav ul{display:flex;gap:1.5rem;list-style:none;}
-    .nav a{font-weight:600;}
-    .nav a:hover{color:var(--color-primary);}
-
-    /* Hero */
-    .hero{
-      min-height:70vh;
-      background:url('assets/hero.jpg') center/cover no-repeat,
-                 linear-gradient(135deg,rgba(0,102,255,.8),rgba(0,102,255,.4));
-      color:#fff;
-      display:flex;flex-direction:column;justify-content:center;align-items:center;
-      text-align:center;
-      padding:2rem;
-    }
-    .hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:600;margin-bottom:1rem;}
-    .hero p{max-width:700px;margin-bottom:2rem;font-size:1.125rem;}
-
-    /* Services */
-    #servicios{background:#fff;}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
-    .card{
-      background:#fff;
-      padding:2rem 1.5rem;
-      border-radius:1rem;
-      box-shadow:0 10px 20px rgba(0,0,0,.05);
-      text-align:center;
-    }
-    .card img{height:48px;margin-bottom:1rem;}
-    .card h3{font-size:1.35rem;font-weight:600;margin-bottom:.5rem;}
-    .card p{font-size:.95rem;opacity:.8;}
-
-    /* Recursos */
-    #recursos ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;list-style:none;margin-top:1rem;}
-    #recursos a{display:block;padding:1rem;border:1px solid var(--color-primary);border-radius:.75rem;text-align:center;font-weight:600;transition:background .25s,color .25s;}
-    #recursos a:hover{background:var(--color-primary);color:#fff;}
-
-    /* Footer */
-    footer{background:#0d1117;color:#c9d1d9;padding:2rem 1rem;}
-    .footer-inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-    .social a{margin-right:.75rem;}
-    .social img{height:24px;filter:invert(1);}
-  </style>
+  <!-- Hoja de estilos externa -->
+  <link rel="stylesheet" href="css/styles.css?v=1" />
 </head>
 <body>
-  <!-- Header -->
+  <!-- ===== Header ===== -->
   <header>
     <nav class="nav">
       <div class="logo"><a href="/">LinkAutoridad</a></div>
@@ -102,16 +24,16 @@
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- ===== Hero (único) ===== -->
   <section class="hero">
     <h1>Impulsa tu autoridad en LinkedIn</h1>
     <p>Te ayudo a convertir tu perfil en una máquina de atracción de clientes con contenido estratégico y una presencia imbatible.</p>
     <a href="#contacto" class="btn">Reserva una sesión</a>
   </section>
 
-  <!-- Servicios -->
+  <!-- ===== Servicios ===== -->
   <section id="servicios" class="container">
-    <h2 style="text-align:center;font-size:2rem;font-weight:600;margin-bottom:2rem;">Servicios</h2>
+    <h2 class="section-title">Servicios</h2>
     <div class="cards">
       <article class="card">
         <img src="assets/linkedin.svg" alt="LinkedIn">
@@ -131,46 +53,5 @@
     </div>
   </section>
 
-  <!-- Recursos -->
+  <!-- ===== Recursos ===== -->
   <section id="recursos" class="container">
-    <h2 style="text-align:center;font-size:2rem;font-weight:600;">Recursos gratuitos</h2>
-    <ul>
-      <li><a href="/recursos/linkedin.html">Guía de LinkedIn</a></li>
-      <li><a href="/recursos/emprendimiento.html">Toolkit de emprendimiento</a></li>
-      <li><a href="/recursos/productividad.html">Checklist de productividad</a></li>
-    </ul>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <small>&copy; 2025 LinkAutoridad. Todos los derechos reservados.</small>
-      <div class="social">
-        <a href="https://linkedin.com" aria-label="LinkedIn"><img src="assets/linkedin-icon.svg" alt="LinkedIn"></a>
-        <a href="https://twitter.com" aria-label="Twitter"><img src="assets/twitter.svg" alt="Twitter"></a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
-    // Efecto fade-in al hacer scroll
-    const faders = document.querySelectorAll('.card, .hero, #recursos li');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    faders.forEach(el => {
-      el.style.opacity = 0;
-      el.style.transform = 'translateY(40px)';
-      observer.observe(el);
-    });
-  </script>
-</body>
-</html>
