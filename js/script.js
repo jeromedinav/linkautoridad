@@ -1,5 +1,4 @@
 // js/script.js
-// Efecto fade-in al hacer scroll
 const faders = document.querySelectorAll('.card, .hero, #recursos li');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
