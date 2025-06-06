@@ -1,7 +1,4 @@
-/* =========================
-   LINKAUTORIDAD – Hoja de estilos
-   ========================= */
-
+/* css/styles.css */
 :root{
   --color-primary:#0066ff;
   --color-primary-dark:#0049b3;
@@ -17,7 +14,6 @@ body{
 }
 a{text-decoration:none;color:inherit;}
 
-/* ---- Layout helpers ---- */
 .container{max-width:1100px;margin:auto;padding:4rem 1rem;}
 .btn{
   display:inline-block;
@@ -30,7 +26,6 @@ a{text-decoration:none;color:inherit;}
 }
 .btn:hover{background:var(--color-primary-dark);}
 
-/* ---- Header ---- */
 header{
   background:#fff;
   box-shadow:0 2px 8px rgba(0,0,0,.05);
@@ -41,10 +36,8 @@ header{
 .nav a{font-weight:600;}
 .nav a:hover{color:var(--color-primary);}
 
-/* ---- Hero ---- */
 .hero{
   min-height:70vh;
-  /* ruta corregida: subimos un nivel para salir de /css/ */
   background:url('../assets/hero.jpg') center/cover no-repeat;
   color:#fff;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
@@ -52,7 +45,7 @@ header{
   padding:2rem;
   position:relative;
 }
-.hero::before{             /* overlay para contraste */
+.hero::before{
   content:"";
   position:absolute;inset:0;
   background:rgba(0,0,0,.45);
@@ -62,7 +55,6 @@ header{
 .hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:600;margin-bottom:1rem;}
 .hero p{max-width:700px;margin-bottom:2rem;font-size:1.125rem;}
 
-/* ---- Servicios ---- */
 #servicios{background:#fff;}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
 .card{
@@ -76,7 +68,6 @@ header{
 .card h3{font-size:1.35rem;font-weight:600;margin-bottom:.5rem;}
 .card p{font-size:.95rem;opacity:.8;}
 
-/* ---- Recursos ---- */
 .recursos-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -89,4 +80,17 @@ header{
   padding:1rem;
   border:1px solid var(--color-primary);
   border-radius:.75rem;
-  text-ali
+  text-align:center;
+  font-weight:600;
+  transition:background .25s,color .25s;
+}
+.recursos-grid a:hover{background:var(--color-primary);color:#fff;}
+
+footer{background:#0d1117;color:#c9d1d9;padding:2rem 1rem;}
+.footer-inner{
+  max-width:1100px;margin:auto;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;
+}
+.social a{margin-right:.75rem;}
+.social img{height:24px;filter:invert(1);}
